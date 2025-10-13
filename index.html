@@ -1,17 +1,161 @@
-/* Navbar */ nav { position: fixed; width: 100%; background: rgba(15,15,15,0.95); display: flex; justify-content: center; padding: 15px 0; z-index: 1000; } nav ul { display: flex; gap: 30px; list-style: none; } nav a { font-weight: 600; } nav a.active { color: #00ffff; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anmol Thapa | Infrastructure Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter', sans-serif; background:#0f0f0f; color:#fff; }
 
-/* Hero Section */ #hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #0f0f0f, #1a1a1a); } #hero h1 { font-size: 3rem; margin-bottom: 20px; color: #00bcd4; } #hero p { font-size: 1.25rem; color: #cccccc; margin-bottom: 20px; } .btn { padding: 12px 25px; border: 2px solid #00bcd4; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; } .btn:hover { background: #00bcd4; color: #000; }
+    a { color:#00bcd4; text-decoration:none; }
+    a:hover { text-decoration:underline; }
 
-/* Sections */ section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; } .section-heading { font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: #00bcd4; }
+    /* Navbar */
+    nav { position: fixed; width:100%; background: rgba(15,15,15,0.95); display:flex; justify-content:center; padding:15px 0; z-index:1000; }
+    nav ul { display:flex; gap:30px; list-style:none; }
+    nav a { font-weight:600; }
+    nav a.active { color:#00ffff; }
 
-/* Skills */ .skills-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; } .skills-list span { background: #111; border: 1px solid #00bcd4; padding: 10px 18px; border-radius: 12px; font-weight: 600; transition: transform 0.3s; } .skills-list span:hover { transform: scale(1.1); }
+    /* Hero */
+    #hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background: linear-gradient(135deg,#0f0f0f,#1a1a1a); }
+    #hero h1 { font-size:3rem; margin-bottom:20px; color:#00bcd4; }
+    #hero p { font-size:1.25rem; color:#cccccc; margin-bottom:20px; }
+    .btn { padding:12px 25px; border:2px solid #00bcd4; border-radius:50px; font-weight:600; transition: all 0.3s ease; }
+    .btn:hover { background:#00bcd4; color:#000; }
 
-/* Projects */ .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; } .project-card { background: #1a1a1a; border: 1px solid #00bcd4; border-radius: 15px; padding: 25px; transition: transform 0.4s, box-shadow 0.4s; cursor: pointer; } .project-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 30px rgba(0,188,212,0.4); } .project-card h3 { font-size: 1.6rem; margin-bottom: 12px; color: #00bcd4; } .project-card p { color: #cccccc; margin-bottom: 12px; } .project-card .tech { font-size: 0.9rem; color: #888; }
+    /* Sections */
+    section { padding:80px 20px; max-width:1000px; margin:0 auto; }
+    .section-heading { font-size:2.5rem; text-align:center; margin-bottom:50px; color:#00bcd4; }
 
-/* Contact Form */ .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: 1px solid #00bcd4; background: #111; color: #fff; transition: all 0.3s; } .contact-form input:focus, .contact-form textarea:focus { border-color: #00ffff; outline: none; } .contact-form button { padding: 15px 30px; border-radius: 50px; border: 2px solid #00bcd4; background: none; font-weight: 600; cursor: pointer; transition: all 0.3s; } .contact-form button:hover { background: #00bcd4; color: #000; }
+    /* Skills */
+    .skills-list { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+    .skills-list span { background:#111; border:1px solid #00bcd4; padding:10px 18px; border-radius:12px; font-weight:600; transition: transform 0.3s; }
+    .skills-list span:hover { transform: scale(1.1); }
 
-/* Footer */ footer { text-align: center; padding: 50px 20px; color: #888; background: #0f0f0f; }
+    /* Projects */
+    .projects { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
+    .project-card { background:#1a1a1a; border:1px solid #00bcd4; border-radius:15px; padding:25px; transition: transform 0.4s, box-shadow 0.4s; cursor:pointer; }
+    .project-card:hover { transform:translateY(-10px) scale(1.03); box-shadow:0 15px 30px rgba(0,188,212,0.4); }
+    .project-card h3 { font-size:1.6rem; margin-bottom:12px; color:#00bcd4; }
+    .project-card p { color:#cccccc; margin-bottom:12px; }
+    .project-card .tech { font-size:0.9rem; color:#888; }
 
-/* Animations */ .fade-up { opacity: 0; transform: translateY(40px); transition: all 0.7s ease-out; } .fade-up.show { opacity: 1; transform: translateY(0); }
+    /* Contact Form */
+    .contact-form input, .contact-form textarea { width:100%; padding:15px; margin-bottom:15px; border-radius:12px; border:1px solid #00bcd4; background:#111; color:#fff; transition: all 0.3s; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color:#00ffff; outline:none; }
+    .contact-form button { padding:15px 30px; border-radius:50px; border:2px solid #00bcd4; background:none; font-weight:600; cursor:pointer; transition: all 0.3s; }
+    .contact-form button:hover { background:#00bcd4; color:#000; }
 
-@media(max-width: 768px){ .projects { grid-template-columns: 1fr; } nav ul { gap: 15px; } }
+    /* Footer */
+    footer { text-align:center; padding:50px 20px; color:#888; background:#0f0f0f; }
+
+    /* Animations */
+    .fade-up { opacity:0; transform:translateY(40px); transition: all 0.7s ease-out; }
+    .fade-up.show { opacity:1; transform:translateY(0); }
+
+    @media(max-width:768px){ .projects { grid-template-columns:1fr; } nav ul { gap:15px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="hero">
+  <h1>Anmol Thapa</h1>
+  <p id="typewriter">Infrastructure Engineer | Kubernetes | OpenShift | DevOps Automation</p>
+  <a class="btn" href="#projects">View Projects</a>
+</header>
+
+<section id="about">
+  <h2 class="section-heading fade-up">About Me</h2>
+  <p class="fade-up">I'm an Infrastructure Engineer specializing in Kubernetes and OpenShift. I build automated, scalable, and observable infrastructure. My expertise includes GitOps, RBAC governance, Prometheus monitoring, and cluster automation.</p>
+</section>
+
+<section id="skills">
+  <h2 class="section-heading fade-up">Skills & Technologies</h2>
+  <div class="skills-list fade-up">
+    <span>Kubernetes</span><span>OpenShift</span><span>Terraform</span><span>Ansible</span><span>Helm</span>
+    <span>Argo CD</span><span>Prometheus/Grafana</span><span>GitOps</span><span>CI/CD</span><span>AWS/EKS</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-heading fade-up">Projects</h2>
+  <div class="projects">
+    <div class="project-card fade-up">
+      <h3>OpenShift Storage Growth Automation</h3>
+      <p>Automated Prometheus storage scaling logic based on retention period and PVC metrics.</p>
+      <div class="tech">Tech: Prometheus, Python, ConfigMap, OpenShift</div>
+    </div>
+    <div class="project-card fade-up">
+      <h3>RBAC Governance with ACM + Kyverno</h3>
+      <p>GitOps-based RBAC governance system across OpenShift clusters, enforcing policies automatically.</p>
+      <div class="tech">Tech: ACM, Kyverno, Argo CD, GitLab CI/CD</div>
+    </div>
+    <div class="project-card fade-up">
+      <h3>ETCD Performance Assessment</h3>
+      <p>Benchmarked and optimized etcd pod throughput and latency with Ansible playbooks.</p>
+      <div class="tech">Tech: Ansible, ETCD, Prometheus, OpenShift</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-heading fade-up">Contact Me</h2>
+  <form class="contact-form fade-up" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="margin-top:20px;" class="fade-up">Or email me at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Anmol Thapa. All rights reserved.
+</footer>
+
+<script>
+  // Scroll animations
+  const faders = document.querySelectorAll('.fade-up');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); } });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // Navbar active link
+  const sections = document.querySelectorAll('section, header');
+  const navLi = document.querySelectorAll('nav ul li a');
+  window.addEventListener('scroll', ()=>{
+    let current = '';
+    sections.forEach(section=>{
+      const sectionTop = section.offsetTop - 60;
+      if(scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLi.forEach(a => { a.classList.remove('active'); if(a.getAttribute('href') === '#'+current) a.classList.add('active'); });
+  });
+
+  // Typewriter effect
+  const typewriter = document.getElementById('typewriter');
+  const text = typewriter.innerText;
+  typewriter.innerText = '';
+  let i=0;
+  function type(){ if(i<text.length){ typewriter.innerText+=text.charAt(i); i++; setTimeout(type,50); } }
+  type();
+</script>
+
+</body>
+</html>
